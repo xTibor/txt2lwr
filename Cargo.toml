@@ -1,0 +1,9 @@
+[package]
+name = "txt2lwr"
+version = "0.1.0"
+authors = ["Tibor Nagy <xnagytibor@gmail.com>"]
+
+[dependencies]
+byteorder = "*"
+structopt = "0.1.0"
+structopt-derive = "0.1.0"

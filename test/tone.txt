@@ -1,0 +1,22 @@
+to fasttone :freq
+    make "f int 1193180 / :freq
+    make "hi int :f / 256
+    make "lo remainder :f 256
+    .out 67 182
+    .out 66 :lo
+    .out 66 :hi
+    .out 97 51
+end
+
+to startup
+    make "i 0
+    repeat 2000 [
+        make "y (sin :i) * 60 + (sin :i * 50) * 10
+        fasttone 500 + :y
+        sety :y
+        pu
+        setx (remainder :i 320) - 160
+        pd
+        make "i :i + 1
+    ]
+end

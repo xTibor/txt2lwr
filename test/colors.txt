@@ -1,0 +1,21 @@
+to startup
+    make "w 240
+    make "h 170
+
+    make "y 0
+    repeat 16 [
+        make "x 0
+        repeat 16 [
+            pu
+            setx 0 - (:w / 2) + :x * (:w / 16)
+            sety (:h / 2) - :y * (:h / 16)
+
+            setc :y * 16 + :x
+            pd
+            stamp
+
+            make "x :x + 1
+        ]
+        make "y :y + 1
+    ]
+end
